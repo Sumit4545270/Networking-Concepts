@@ -1,0 +1,30 @@
+📡 Types of Communication in Networking
+1️⃣ Unicast
+
+        Meaning: One sender → One receiver
+        
+        Example: Sending a WhatsApp message directly to your friend.
+        
+        Cost (Bandwidth): 🔹 Lowest (only 2 devices involved).
+
+2️⃣ Broadcast
+
+        Meaning: One sender → All devices in the network
+        
+        Example: ARP request (Who has this IP?) goes to everyone in LAN.
+        
+        Cost (Bandwidth): 🔸 High (every device receives data, even if not needed).
+
+3️⃣ Multicast
+
+        Meaning: One sender → Selected group of receivers
+        
+        Example: Live streaming a cricket match (only interested users join the stream).
+        
+        Cost (Bandwidth): ⚖️ Medium (better than broadcast, more efficient).
+
+✅ Shortcut to Remember:
+
+        Unicast → 1 to 1
+        Broadcast → 1 to All
+        Multicast → 1 to Many (specific group)

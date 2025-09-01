@@ -1,0 +1,128 @@
+🖧 Network Topologies – Detailed Explanation
+1️⃣ What is a Topology?
+
+Topology = the way devices (computers, switches, routers, printers) are physically or logically connected in a network.
+👉 Simply: How devices are arranged & how data flows between them.
+
+There are two types:
+
+  Physical Topology → actual physical layout (cables, devices).
+  
+  Logical Topology → how data moves (flow of information).
+
+2️⃣ Types of Topologies
+🔹 A) Bus Topology
+
+        Structure: All devices share a single backbone cable.
+        
+        Data travels in both directions along the cable.
+        
+        If two devices send at the same time → collision happens.
+        
+        ✅ Advantages:
+        
+        Easy to install, uses less cable.
+        
+        Cost-effective for small networks.
+        
+        ❌ Disadvantages:
+        
+        If main cable breaks, whole network fails.
+        
+        Collisions increase with more devices (slow performance).
+
+🔹 B) Star Topology
+
+        Structure: All devices connect to a central device (switch/hub).
+        
+        Data always passes through the central hub.
+        
+        ✅ Advantages:
+        
+        Easy to manage & troubleshoot.
+        
+        If one cable fails → only that device is affected.
+        
+        High performance (no collisions in switches).
+        
+        ❌ Disadvantages:
+        
+        If central hub/switch fails, whole network goes down.
+        
+        Needs more cable → more cost.
+
+🔹 C) Ring Topology
+
+        Structure: Devices connected in a circular way (each device has 2 neighbors).
+        
+        Data moves in one direction (or both in dual ring).
+        
+        ✅ Advantages:
+        
+        Predictable data flow (no collision).
+        
+        Equal access for all devices.
+        
+        ❌ Disadvantages:
+        
+        If one device or cable fails → entire network can fail.
+        
+        Harder to troubleshoot.
+
+🔹 D) Mesh Topology
+
+        Structure: Every device is connected to every other device.
+        
+        Two types:
+        
+        Full Mesh → all devices connected to each other.
+        
+        Partial Mesh → some devices fully connected.
+        
+        ✅ Advantages:
+        
+        Very reliable (multiple paths available).
+        
+        High security and fault tolerance.
+        
+        ❌ Disadvantages:
+        
+        Very costly (lots of cables & ports needed).
+        
+        Complex to install/manage.
+
+🔹 E) Tree Topology
+
+        Structure: Combination of Star + Bus.
+        
+        Multiple star networks connected using a main backbone cable.
+        
+        ✅ Advantages:
+        
+        Easy to expand.
+        
+        Fault in one branch doesn’t affect others.
+        
+        ❌ Disadvantages:
+        
+        Backbone failure = entire network down.
+        
+        More cable needed.
+
+🔹 F) Hybrid Topology
+
+        Structure: Combination of two or more topologies (example: Star + Ring).
+        
+        Common in large enterprises.
+        
+        ✅ Advantages:
+        
+        Flexible & scalable.
+        
+        Can be designed as per requirements.
+        
+        ❌ Disadvantages:
+        
+        Very complex design.
+
+Expensive to maintain.

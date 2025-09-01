@@ -1,0 +1,98 @@
+🌐 IP Address Classes
+
+⚡ Sabse pehle, IP address = 32 bits ka number (IPv4).
+
+        Dotted Decimal Format: 192.168.1.1 (4 Octets = 8 bits each = total 32 bits).
+        
+        Har IP address do part me hota hai:
+
+                  Network ID (konsa network ka hissa hai)
+                  
+                  Host ID (us network me kaunsa device hai).
+
+👉 Classes ka use pehle kiya jata tha IP address ko alag alag size ke network me divide karne ke liye. (Aaj VLSM/CIDR use hota hai, but classes exam/interview ke liye important hai).
+
+🔹 Class A
+
+          Range: 1.0.0.0 to 126.255.255.255
+          
+          Default Subnet Mask: 255.0.0.0 (/8)
+          
+          Network Bits: 8, Host Bits: 24
+          
+          No. of Networks: 128 (2⁷, because 0 & 127 reserved)
+          
+          Hosts per Network: ~16 million (2²⁴ - 2)
+          
+          Use: Very large networks (ISPs, Government).
+          
+          Example: 10.0.0.1
+
+🔹 Class B
+
+          Range: 128.0.0.0 to 191.255.255.255
+          
+          Default Subnet Mask: 255.255.0.0 (/16)
+          
+          Network Bits: 16, Host Bits: 16
+          
+          No. of Networks: ~16,000
+          
+          Hosts per Network: ~65,000 (2¹⁶ - 2)
+          
+          Use: Medium-sized organizations.
+          
+          Example: 172.16.0.1
+
+🔹 Class C
+
+          Range: 192.0.0.0 to 223.255.255.255
+          
+          Default Subnet Mask: 255.255.255.0 (/24)
+          
+          Network Bits: 24, Host Bits: 8
+          
+          No. of Networks: ~2 million
+          
+          Hosts per Network: 254 (2⁸ - 2)
+          
+          Use: Small networks (offices, home).
+          
+          Example: 192.168.1.1
+
+🔹 Class D (Multicast)
+
+          Range: 224.0.0.0 to 239.255.255.255
+          
+          Use: Multicast groups (one-to-many communication, like IPTV, video conferencing).
+          
+          Not for normal host assignment.
+          
+          🔹 Class E (Experimental)
+          
+          Range: 240.0.0.0 to 255.255.255.255
+
+          Use: Experimental, reserved for future/research (not used in practice).
+
+
+🔑 Quick Trick to Identify Class
+(Shortcut)
+👉 Look at first octet (first number) of IP address:
+
+| First Octet Range | Class            | Default Mask  |
+| ----------------- | ---------------- | ------------- |
+| 1 – 126           | A                | 255.0.0.0     |
+| 128 – 191         | B                | 255.255.0.0   |
+| 192 – 223         | C                | 255.255.255.0 |
+| 224 – 239         | D (Multicast)    | –             |
+| 240 – 255         | E (Experimental) | –             |
+
+
+
+📝 Real-Life Example
+
+Home Wi-Fi → 192.168.1.1 → Class C
+
+University Network → 172.16.0.0 → Class B
+
+Big ISP backbone → 10.0.0.0 → Class A

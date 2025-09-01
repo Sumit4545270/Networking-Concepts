@@ -1,0 +1,71 @@
+🔄 STP (Spanning Tree Protocol)
+
+👉 Soch le ek city road network hai:
+
+            Agar har road har jagah jodti rahe to traffic jam (loop) ho jayega.
+            
+            Isliye traffic police kuch roads ko bandh (block) kar dete hain, aur ek main road (root bridge) choose karte hain.
+            
+            Agar main road toot jaye, to backup road khul jati hai.
+
+    STP bhi yehi karta hai:
+
+        Works in Switching (Layer 2).
+        
+        Stops loops in LAN with many switches.
+        
+        Selects a root bridge as main path.
+        
+        Blocks extra links (like traffic police).
+        
+        Opens backup link if main fails.
+        
+        Prevents broadcast storm (network traffic jam).
+        
+        IEEE 802.1D standard.
+        
+        Increases reliability.
+        
+        Used inside organizations’ LAN.
+        
+        Example → Multiple office switches connected in a ring.
+
+
+📩 UDP (User Datagram Protocol)
+
+👉 Soch le tu apne dost ko postcard bhej raha hai:
+
+            Tu seedha daal diya postbox me, bina phone karke confirm kiya ki wo ghar par hai ya nahi.
+            
+            Shayad postcard pohoch jaaye, shayad kho bhi jaye.
+            
+            Lekin postcard jaldi pahuchta hai, bina extra formalities ke.
+
+
+UDP bhi yehi karta hai:
+
+        Works in Transport Layer (Layer 4).
+        
+        Connectionless → no setup, no confirmation.
+        
+        Fast but unreliable (may lose data).
+        
+        Sends data in small packets (datagrams).
+        
+        Lightweight (no extra overhead like TCP).
+        
+        Used in real-time apps: games, video calls, live streams.
+        
+        Uses port numbers for sender/receiver.
+        
+        Only checksum (basic error check).
+        
+        Best when speed > accuracy.
+        
+        Example → WhatsApp call, PUBG game.
+
+✅ Relation / Shortcut
+
+STP = City traffic police system → prevent loops & jams inside LAN (Switches).
+
+UDP = Postcard → fast, simple, but no guarantee (Transport layer).

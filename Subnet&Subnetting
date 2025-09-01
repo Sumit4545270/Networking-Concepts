@@ -1,0 +1,76 @@
+🌐 Subnet & Subnetting
+1️⃣ What is Subnet?
+
+        Subnet = Sub Network
+        
+        Matlab ek bada network ko tod kar chhote-chhote networks banana.
+        
+        Kyun? → Taaki IP address ka sahi use ho, aur network traffic manage ho.
+
+        👉 Example:
+        Tu ek colony ka malik hai jisme 100 ghar (devices) aa sakte hain.
+        But abhi tere paas sirf 20 log rehte hain.
+        Poore 100 ghar reserve karne ki zarurat nahi → tu colony ko chhote blocks (subnets) me tod dega.
+
+2️⃣ What is Subnetting?
+
+        Process of dividing a large network into small parts.
+        
+        Har subnet ka apna Network ID aur Broadcast ID hota hai.
+        
+        Isse devices organize hote hain aur IP waste nahi hota.
+
+3️⃣ Why Subnetting?
+
+        Efficient IP usage (no wastage).
+        
+        Better network security (ek subnet dusre se alag ho sakta hai).
+        
+        Easy management (ek bada crowd ko tod kar groups banana).
+        
+        Reduces congestion (traffic divide ho jata hai).
+
+🔎 Types of Subnetting
+✅ 1. FLSM (Fixed Length Subnet Mask)
+
+        Har subnet same size ka hota hai.
+        
+        Example: Agar tere paas 100 IP hain → tu har subnet me 25-25 IP karega.
+        
+        Easy to calculate, but thoda IP waste hota hai.
+
+✅ 2. VLSM (Variable Length Subnet Mask)
+
+        Har subnet different size ka ho sakta hai (requirement ke hisaab se).
+        
+        Example:
+        
+        Subnet A → 50 users
+        
+        Subnet B → 20 users
+        
+        Subnet C → 10 users
+
+👉 Yaha har group ko utne hi IP mile jitne usko chahiye.
+
+Zyada efficient hai, but calculation thoda tough hai.
+
+🎯 Subnetting Ek Line Me
+
+        Subnet = Big network tod kar small network.
+        
+        FLSM = Equal size subnets.
+        
+        VLSM = Different size subnets (no wastage).
+
+💡 Example for better clarity:
+Suppose tu ek company me hai jisme 200 IPs available hain.
+
+        HR dept → 100 IPs chahiye
+        
+        IT dept → 50 IPs chahiye
+        
+        Sales dept → 20 IPs chahiye
+
+👉 Agar tu FLSM use karega to sabko equal IPs dene padenge → waste hoga.
+👉 Agar tu VLSM use karega to sabko utne hi IPs milenge jitne required hai → efficient hai.

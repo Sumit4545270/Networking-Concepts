@@ -132,4 +132,54 @@
         | 2049     | NFS              | Network File System                              | File sharing (UNIX/Linux)              |
         | 3128     | Proxy (Squid)    | HTTP Proxy                                       | Web proxy servers                      |
         | 3306     | MySQL            | MySQL Database                                   | Database connections                   |
-| 3389     | RDP              | Remote Desktop Protocol                          | Windows remote desktop                 |
+        | 3389     | RDP              | Remote Desktop Protocol                          | Windows remote desktop                 |
+
+🌐 Internetworking Types
+1️⃣ Intranet
+
+        Definition: A private network inside an organization.
+        
+        Access: Only employees or authorized people can access.
+        
+        Use:
+        
+                Share documents, projects, internal websites.
+                
+                Example → College internal portal, company HR portal.
+                
+                Security: 🔒 High (completely private).
+
+2️⃣ Extranet
+
+        Definition: A part of Intranet shared with trusted outsiders.
+        
+        Access: Customers, vendors, business partners.
+
+        Use:
+
+                Sharing project progress with client.
+                
+                Supplier checking product demand.
+                
+                Security: 🔒 Medium (limited access given).
+
+3️⃣ Internet
+
+        Definition: A global network of networks.
+        
+        Access: Public (anyone with connection).
+
+        Use:
+        
+                Websites, emails, social media, online services.
+                
+                Security: 🔓 Lowest (needs firewalls, VPN, encryption).
+
+(Short)
+
+| Feature      | Intranet (Private) | Extranet (Semi-Private) | Internet (Public) |
+| ------------ | ------------------ | ----------------------- | ----------------- |
+| **Scope**    | Internal use only  | Internal + Outsiders    | Worldwide         |
+| **Access**   | Employees only     | Employees + Partners    | Everyone          |
+| **Security** | Highest            | Medium                  | Lowest            |
+| **Example**  | College ERP        | Supplier login portal   | Google, Facebook  |

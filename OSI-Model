@@ -1,0 +1,133 @@
+🏛 OSI Model (Open Systems Interconnection)
+
+👉 OSI is a reference model made by ISO (International Standards Organization).
+It explains how data travels from one computer to another in 7 layers.
+
+        Think of it like sending a letter 📩 through a postal system:
+        
+        You write it (Application layer),
+        
+        Pack it (Presentation, Session, Transport),
+        
+        Put address on it (Network),
+        
+        Put it in an envelope (Data Link),
+        
+        And a postman physically carries it (Physical).
+
+📚 The 7 Layers (Top → Bottom)
+7. Application Layer
+
+        What it does: This is where user applications interact with the network.
+        
+        Example protocols: HTTP (web), FTP (file transfer), SMTP (email), DNS (domain names).
+        
+        Device: End-user software (browsers, apps).
+        
+        Think: “The layer you actually see and use.”
+
+6. Presentation Layer
+
+        What it does:
+        
+        Converts data into a format both sender and receiver understand.
+        
+        Handles encryption (security), compression (smaller size), translation (ASCII, JPEG, etc.).
+        
+        Example protocols: SSL/TLS, JPEG, MPEG.
+        
+        Think: “The translator — makes data readable and secure.”
+
+5. Session Layer
+
+        What it does:
+        
+        Creates, manages, and ends sessions (continuous connections).
+        
+        Adds checkpoints in long communication, so if something fails, it resumes.
+        
+        Example protocols: NetBIOS, RPC.
+        
+        Think: “The meeting manager — who talks, when, and how long.”
+
+4. Transport Layer
+
+        What it does:
+        
+        Breaks large data into segments.
+        
+        Uses ports (like 80 for HTTP, 443 for HTTPS) to identify applications.
+        
+        Ensures data is delivered correctly and in order (TCP) or just sends it fast without checking (UDP).
+        
+        Protocols: TCP, UDP.
+        
+        Think: “The delivery guarantee guy — reliable/unreliable delivery.”
+
+3. Network Layer
+
+        What it does:
+        
+        Adds logical addressing (IP addresses).
+        
+        Decides the best path to the destination (routing).
+        
+        Protocols: IP, ICMP, OSPF, BGP.
+        
+        Devices: Routers.
+        
+        Think: “The GPS — finds the route to the destination.”
+
+2. Data Link Layer
+
+        What it does:
+        
+        Adds MAC address (unique hardware address of devices).
+        
+        Packages data into frames.
+        
+        Checks errors using FCS (Frame Check Sequence).
+        
+        Protocols/Tech: Ethernet, ARP.
+        
+        Devices: Switches, bridges.
+        
+        Think: “The local delivery guy — delivers only inside the neighborhood (LAN).”
+
+1. Physical Layer
+
+        What it does:
+        
+        Converts data into bits (0s & 1s).
+        
+        Defines cables, signals, voltage, radio frequencies.
+        
+        Devices: Cables, hubs, NICs, repeaters.
+        
+        Think: “The actual road where cars (data bits) travel.”
+
+🔄 Encapsulation (How data travels)
+
+        When you send data:
+        
+        App data → Transport adds port info → Network adds IP → Data Link adds MAC → Physical sends bits.
+        When you receive data:
+        
+        The process is reversed (decapsulation).
+
+🌟 Key Exam/Interview Points
+
+        OSI = 7 layers (Application → Physical).
+        
+        Routing happens at Layer 3 (Network).
+        
+        Switching happens at Layer 2 (Data Link).
+        
+        Encryption usually at Layer 6 (Presentation).
+        
+        Port numbers at Layer 4 (Transport).
+        
+        Cables, signals at Layer 1 (Physical).
+
+✅ One Line Summary:
+        The OSI model is a 7-layer framework that explains how data moves from one device to another — from user applications (Layer 7) down to physical signals (Layer 1).

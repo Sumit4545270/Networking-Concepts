@@ -1,0 +1,135 @@
+🌐 Internetworking
+1️⃣ What is Internetworking?
+
+        Networking = connecting devices (computers, mobiles, printers) inside one network.
+        
+        Internetworking = connecting multiple different networks together so they can communicate.
+        👉 Basically, a network of networks.
+        The Internet itself is the biggest example of internetworking.
+
+2️⃣ Why is Internetworking Needed?
+
+        Every office, home, or college has its own LAN.
+        
+        But to talk with each other (e.g., your college LAN communicating with a company LAN), they need internetworking devices.
+        
+        Without internetworking, each network would be like an isolated island.
+
+3️⃣ Devices Used in Internetworking
+
+        Repeater (Layer 1) → Extends signal range, does not understand data.
+        
+        Hub (Layer 1) → Just broadcasts to all, not smart.
+        
+        Switch (Layer 2) → Connects devices in a LAN, forwards data based on MAC address.
+        
+        Router (Layer 3) 🏆 → Main internetworking device, connects different networks, decides best path using routing tables.
+        
+        Gateway (Layer 3/4/7) → Translates between different protocols if needed.
+
+4️⃣ Types of Networks That Get Connected
+
+        LAN (Local Area Network) = small area (home, office).
+        
+        MAN (Metropolitan Area Network) = city level.
+        
+        WAN (Wide Area Network) = country/world level.
+        
+        Internetworking = connecting these different networks.
+
+5️⃣ How Internetworking Works (Step by Step Example)
+
+        📩 Imagine you send a WhatsApp message to your friend in another city:
+        
+        Your phone → Wi-Fi Router (LAN)
+        
+        Message becomes a data packet with your IP as source and your friend’s IP as destination.
+        
+        Router → ISP network (WAN)
+        
+        Your router forwards the packet into your ISP’s wide network.
+        
+        ISP routers → Internet backbone
+        
+        Many routers forward the packet, always choosing the best path (using routing protocols like OSPF, BGP).
+        
+        Friend’s ISP → Friend’s Router (LAN)
+        
+        Packet arrives at your friend’s local ISP, then enters their LAN.
+        
+        Friend’s phone receives the packet
+        
+        WhatsApp app displays your message.
+
+✅ This is internetworking in action — multiple networks connected via routers.
+
+6️⃣ Protocols Used in Internetworking
+
+        IP → addressing and packet delivery.
+        
+        TCP/UDP → data transport (reliable/unreliable).
+        
+        ICMP → error reporting & testing (ping).
+        
+        BGP (Border Gateway Protocol) → routing between ISPs (the backbone of the Internet).
+        
+        OSPF / EIGRP / IS-IS → routing inside organizations.
+
+7️⃣ Challenges in Internetworking
+
+        Addressing → every device must have a unique IP.
+        
+        Routing → selecting the best path.
+        
+        Scalability → handling millions of networks.
+        
+        Security → firewalls, encryption, VPNs.
+        
+        Compatibility → different vendors/protocols working together.
+
+8️⃣ Real-Life Example
+
+        Your home Wi-Fi (LAN) → Router → ISP WAN → Internet backbone → Another ISP → Friend’s LAN.
+        
+        This whole journey = Internetworking.
+
+📝 One-line Summary
+
+        Internetworking = connecting different networks together via routers and protocols, to create one large communication system (like the Internet).
+
+🔑 Port Numbers:
+
+        | Port No. | Protocol/Service | Full Form / Usage                                | Purpose                                |
+        | -------- | ---------------- | ------------------------------------------------ | -------------------------------------- |
+        | 20       | FTP (Data)       | File Transfer Protocol (Data channel)            | Transfer files (active mode)           |
+        | 21       | FTP (Control)    | File Transfer Protocol (Control channel)         | Manage FTP session (commands)          |
+        | 22       | SSH              | Secure Shell                                     | Secure remote login & file transfer    |
+        | 23       | Telnet           | Telecommunication Network                        | Remote login (UNSECURE, plain text)    |
+        | 24       | –                | Unassigned / private apps                        | Rarely used                            |
+        | 25       | SMTP             | Simple Mail Transfer Protocol                    | Send emails between servers            |
+        | 49       | TACACS+          | Terminal Access Controller Access Control System | Authentication (Cisco)                 |
+        | 53       | DNS              | Domain Name System                               | Converts domain ↔ IP                   |
+        | 63       | –                | Not standard (WHOIS++)                           | Rare use                               |
+        | 67       | DHCP (Server)    | Dynamic Host Configuration Protocol              | Assigns IPs to clients                 |
+        | 68       | DHCP (Client)    | Dynamic Host Configuration Protocol              | Receives IP from server                |
+        | 69       | TFTP             | Trivial File Transfer Protocol                   | Simple file transfer, no auth          |
+        | 80       | HTTP             | Hyper Text Transfer Protocol                     | Websites (unencrypted)                 |
+        | 88       | Kerberos         | –                                                | Authentication protocol                |
+        | 110      | POP3             | Post Office Protocol v3                          | Email receiving (download)             |
+        | 119      | NNTP             | Network News Transfer Protocol                   | Usenet/news groups                     |
+        | 123      | NTP              | Network Time Protocol                            | Sync system time                       |
+        | 138      | NetBIOS-DGM      | NetBIOS Datagram Service                         | Windows file/printer sharing           |
+        | 139      | NetBIOS-SSN      | NetBIOS Session Service                          | Windows sessions (SMB)                 |
+        | 143      | IMAP             | Internet Message Access Protocol                 | Email receiving (keeps copy on server) |
+        | 161      | SNMP             | Simple Network Management Protocol               | Monitor/manage devices                 |
+        | 162      | SNMP Trap        | –                                                | SNMP alerts/notifications              |
+        | 389      | LDAP             | Lightweight Directory Access Protocol            | Directory services                     |
+        | 443      | HTTPS            | HTTP Secure (SSL/TLS)                            | Secure websites                        |
+        | 636      | LDAPS            | LDAP Secure                                      | Encrypted directory queries            |
+        | 993      | IMAPS            | IMAP Secure                                      | Secure email                           |
+        | 995      | POP3S            | POP3 Secure                                      | Secure email                           |
+        | 1433     | MS-SQL           | Microsoft SQL Server                             | Database communication                 |
+        | 2049     | NFS              | Network File System                              | File sharing (UNIX/Linux)              |
+        | 3128     | Proxy (Squid)    | HTTP Proxy                                       | Web proxy servers                      |
+        | 3306     | MySQL            | MySQL Database                                   | Database connections                   |
+| 3389     | RDP              | Remote Desktop Protocol                          | Windows remote desktop                 |

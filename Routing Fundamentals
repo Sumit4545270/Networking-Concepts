@@ -1,0 +1,107 @@
+🌐 Routing Fundamentals
+🔹 What is Routing?
+
+        Routing = ek process jisme data packets ko ek network se dusre network tak best path use karke bheja jata hai.
+        👉 Router ek postman ki tarah hota hai jo dekhta hai ki packet (letter) ko kahan bhejna hai aur konsa rasta best hai.
+
+🔹 Why Routing is Needed?
+
+        Agar sirf ek hi network ho (jaise ek ghar ka LAN) → Routing ki need nahi.
+        
+        Lekin jab multiple networks ko connect karna ho (jaise College LAN → Internet → Company LAN), tab Routing zaroori hai.
+        
+        Router ke bina packet ko pata hi nahi chalega kaha jana hai.
+
+🔹 Router ka Kaam kya hota hai?
+
+        Path Decide karna (Best route find karna)
+        
+        Packets Forward karna (Source → Destination)
+        
+        Loop avoid karna (jaise ek hi packet baar-baar ghoom na jaye)
+        
+        Network divide karna (alag-alag broadcast domain banata hai)
+
+🔹 Routing Table
+
+        Router ke paas ek Routing Table hoti hai = ek "Map" jisme likha hota hai ki kaunsa destination kis rasta se reachable hai.
+        
+        Jaise postman ke paas ek address book hoti hai.
+        
+        Example Entry:
+        
+                Destination: 192.168.1.0/24 → Next Hop: 10.0.0.2 via FastEthernet0/0
+
+🔹 Types of Routing
+1. Static Routing
+
+        Admin manually route dalta hai.
+        
+        Simple, secure, lekin agar network bada ho to manage karna mushkil.
+        
+        Example:
+        
+                ip route 192.168.2.0 255.255.255.0 10.0.0.2
+
+
+👉 Matlab agar packet 192.168.2.0 network ke liye hai to usko 10.0.0.2 pe bhej do.
+
+2. Dynamic Routing
+
+        Routers automatically routes discover karte hain using Routing Protocols.
+        
+        Example: RIP, OSPF, EIGRP, BGP.
+        
+        Advantage → Auto updates, best path choose hota hai.
+        
+        Example (OSPF me):
+        
+                router ospf 1
+                network 192.168.1.0 0.0.0.255 area 0
+
+🔹 Routing Protocols ke Examples
+
+        | Protocol | Type            | Metric (Best Path Kaise Decide karta hai)   |
+        | -------- | --------------- | ------------------------------------------- |
+        | RIP      | Distance Vector | Hop Count (max 15 hops)                     |
+        | OSPF     | Link State      | Cost (Bandwidth based)                      |
+        | EIGRP    | Hybrid          | Bandwidth + Delay                           |
+        | BGP      | Path Vector     | AS Path (Internet backbone me use hota hai) |
+
+🔹 Key Routing Concepts
+
+Hop Count → Ek packet kitne routers cross karta hai.
+        (Jaise ek city se doosri city jane ke liye kitne toll booths aaye).
+
+Administrative Distance (AD) → Reliability measure.
+
+        Static route ka AD = 1 (sabse reliable)
+        
+        RIP = 120, OSPF = 110, EIGRP = 90
+
+Default Route → Agar unknown destination ho to ek "last option" path.
+
+        ip route 0.0.0.0 0.0.0.0 10.0.0.1
+
+
+👉 Matlab sab unknown traffic ko 10.0.0.1 pe bhej do.
+
+🔹 Real Life Example (Relatable)
+
+        Tu apne city (LAN) se ek dost ke ghar (dusra network) jana chahta hai.
+        
+        Tere paas map (routing table) hai jisme likha hai kahan se jana hai.
+        
+        Agar ek hi route ho → Static Routing (sirf wahi road le sakta hai).
+        
+        Agar multiple roads ho → Tu GPS (Dynamic Routing) use karega jo best/fastest route batata hai.
+
+📝 Summary:
+
+        Routing = Best path choose + Packet forward karna.
+        
+        Static Routing → Manual, simple, secure.
+        
+        Dynamic Routing → Auto, scalable, uses protocols.
+
+        Important concepts = Routing Table, AD, Hop Count, Default Route.

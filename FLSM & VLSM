@@ -1,0 +1,147 @@
+🔹 What is FLSM?
+
+        FLSM = Fixed Length Subnet Masking
+        
+        Matlab: saare subnets ka size same hota hai (equal number of hosts).
+        
+        Har subnet me equal IP addresses distribute kiye jaate hain.
+
+🔹 Why FLSM?
+
+        Easy calculation
+        
+        Easy to manage
+        
+        Lekin IP addresses waste hote hain agar kisi subnet me kam devices ho
+
+🔹 Steps to Calculate FLSM
+
+Find total IPs in given network.
+
+        Eg: 192.168.1.0/24 → Total = 2^(32-24) = 2^8 = 256 IPs
+
+Decide how many subnets you need.
+
+        Example: Chahiye 4 subnets
+
+Find subnet bits.
+
+        Formula = 2^n ≥ number of subnets
+        
+        Yaha: 2^2 = 4 → so n = 2 bits
+
+New subnet mask.
+
+        Original mask: /24 (255.255.255.0)
+        
+        Add 2 bits → /26 (255.255.255.192)
+
+Subnet size.
+
+        2^(32-26) = 2^6 = 64 IPs per subnet
+
+🔹 Example:
+
+        Network = 192.168.1.0/24
+        Need = 4 subnets
+        
+        👉 Subnetting:
+        
+                | Subnet No. | Network Address | Usable Range                  | Broadcast Address |
+                | ---------- | --------------- | ----------------------------- | ----------------- |
+                | 1          | 192.168.1.0     | 192.168.1.1 – 192.168.1.62    | 192.168.1.63      |
+                | 2          | 192.168.1.64    | 192.168.1.65 – 192.168.1.126  | 192.168.1.127     |
+                | 3          | 192.168.1.128   | 192.168.1.129 – 192.168.1.190 | 192.168.1.191     |
+                | 4          | 192.168.1.192   | 192.168.1.193 – 192.168.1.254 | 192.168.1.255     |
+
+✅ Each subnet has 64 IPs (62 usable).
+✅ All subnets equal → this is FLSM.
+
+🎯 One-Line Summary
+
+FLSM = Divide the network into equal-sized subnets (same subnet mask, same host count per subnet).
+
+
+
+What is VLSM?
+
+        Variable Length Subnet Masking
+        
+        Matlab: alag-alag subnets ka size alag ho sakta hai, need ke hisaab se.
+        
+        Yaha pe IP addresses waste nahi hote jaise FLSM me hote the.
+
+👉 FLSM = equal subnets (same mask).
+👉 VLSM = flexible subnets (different mask, need based).
+
+🔹 Why VLSM?
+
+        Har department / network ki alag requirement hoti hai.
+        
+        Example:
+        
+                Development = 60 PCs
+                
+                Management = 30 PCs
+                
+                HR = 12 PCs
+        
+        Agar FLSM karenge → sabko barabar subnet milega (62 usable), IP waste hoga.
+        
+        Agar VLSM karenge → har ek ko apni zarurat ke hisaab se IP milega.
+
+🔹 Steps of VLSM
+
+        Total network ka IP block identify karo.
+        
+                Example: 192.168.1.0/24 → total 256 IPs
+        
+        Requirement list banao (bade se chhote tak).
+        
+                Dev = 60 hosts
+                
+                Mgmt = 30 hosts
+                
+                HR = 12 hosts
+        
+        Har requirement ke liye sabse chhota possible subnet mask choose karo.
+        
+        Subnets ko allocate karo without overlap.
+
+🔹 Example Solve (192.168.1.0/24)
+Step 1: Dev needs 60 hosts
+
+        Formula = 2^n – 2 ≥ hosts
+        
+        2^6 – 2 = 62 → OK
+        
+        So subnet = /26 (64 IPs)
+        
+        Allocate → 192.168.1.0 – 192.168.1.63
+
+Step 2: Mgmt needs 30 hosts
+
+        2^5 – 2 = 30 → OK
+        
+        Subnet = /27 (32 IPs)
+        
+        Next block → 192.168.1.64 – 192.168.1.95
+
+Step 3: HR needs 12 hosts
+
+        2^4 – 2 = 14 → OK
+        
+        Subnet = /28 (16 IPs)
+        
+        Next block → 192.168.1.96 – 192.168.1.111
+
+🔹 Final Allocation Table
+        | Department | Needed Hosts | Subnet Mask           | Network Address | Usable Range                 | Broadcast     |
+        | ---------- | ------------ | --------------------- | --------------- | ---------------------------- | ------------- |
+        | Dev        | 60           | /26 (255.255.255.192) | 192.168.1.0     | 192.168.1.1 – 192.168.1.62   | 192.168.1.63  |
+        | Mgmt       | 30           | /27 (255.255.255.224) | 192.168.1.64    | 192.168.1.65 – 192.168.1.94  | 192.168.1.95  |
+        | HR         | 12           | /28 (255.255.255.240) | 192.168.1.96    | 192.168.1.97 – 192.168.1.110 | 192.168.1.111 |
+
+🎯 One-Line Summary (Shortcut)
+
+VLSM = allocate different subnet sizes to different departments/networks based on their actual need → no IP wastage.

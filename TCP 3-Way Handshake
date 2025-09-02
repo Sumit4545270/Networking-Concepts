@@ -1,0 +1,82 @@
+🌐 TCP 3-Way Handshake (Detailed Explanation)
+🔹 What is it?
+
+        TCP ek reliable protocol hai (matlab data galat na ho, missing na ho, sahi order me mile).
+        Connection banane ke liye TCP ek process use karta hai = 3-Way Handshake.
+        👉 Ye process ensure karta hai ki Client aur Server dono ready hai communicate karne ke liye.
+
+📌 Steps of TCP 3-Way Handshake
+🟢 Step 1: SYN (Synchronize)
+
+        Client → Server
+        
+        Client bolta hai:
+        👉 "Hello Server, main connection banana chahta hoon, aur mera sequence number yeh hai (ex: 1000)."
+
+Technical:
+
+        TCP header me SYN flag = 1 hota hai.
+        
+        Client apna ek random Initial Sequence Number (ISN) bhejta hai.
+
+🟡 Step 2: SYN + ACK (Synchronize + Acknowledge)
+
+        Server → Client
+        
+        Server bolta hai:
+        👉 "Hello Client, mujhe tumhara message mila (ACK), aur main bhi ready hoon, mera sequence number yeh hai (ex: 5000)."
+
+Technical:
+
+        Server ACK bhejta hai to confirm kare ki usne client ka SYN receive kiya.
+        
+        Server apna bhi SYN bhejta hai (apna ISN).
+        
+        Matlab ek hi packet me SYN + ACK flags = 1 hote hain.
+
+🔵 Step 3: ACK (Acknowledge)
+
+        Client → Server
+        
+        Client bolta hai:
+        👉 "Ok Server, mujhe tumhara bhi message clear mila, ab hum data bhejna start karte hain."
+
+Technical:
+
+        Client ACK bhejta hai server ke SYN ke liye.
+        
+        Ab dono side ke sequence numbers confirm ho gaye.
+        
+        ✅ Ab connection establish ho gaya!
+        Dono taraf ab Data Transmission shuru ho sakta hai.
+
+🎯 Example with Phone Call 📞
+
+        Client (Tu): "Hello, Sun rahe ho?" (SYN)
+        
+        Server (Dost): "Haan, main sun raha hoon. Tum sun rahe ho?" (SYN + ACK)
+        
+        Client (Tu): "Haan, sun raha hoon. Chalo baat shuru karein." (ACK)
+        ➡️ Ab call connected. Tum dono baat (data exchange) kar sakte ho.
+
+🔑 Why 3-Way?
+
+        SYN: Client ready hone ka signal deta hai.
+        
+        SYN + ACK: Server apna readiness + client ke message ka confirmation deta hai.
+        
+        ACK: Client final confirm deta hai.
+
+👉 Ye 3 steps se dono taraf ka sync aur confirmation ho jata hai.
+
+📝 Key Points to Remember:(Shortcut)
+
+        TCP reliable hai (har packet acknowledge hota hai).
+        
+        Handshake me 3 packets exchange hote hain.
+        
+        Is process ke baad hi data transfer start hota hai.
+        
+        Har side apna Sequence Number exchange karti hai.
+
+Agar beech me koi step fail ho jaye → connection establish nahi hota.

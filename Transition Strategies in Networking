@@ -1,0 +1,64 @@
+🌐 Transition Strategies in Networking
+
+⚡ Ye mainly tab use hoti hain jab purani technology se nayi technology pe shift karna ho.
+👉 Sabse bada case: IPv4 → IPv6 transition
+
+        Kyuki IPv4 addresses (32-bit) almost khatam ho gaye, aur ab duniya slowly IPv6 (128-bit) use kar rahi hai.
+        Par problem ye hai ki sab devices ek sath upgrade nahi ho sakte.
+        Isi liye kuch transition strategies banayi gayi.
+
+🔑 3 Main Transition Strategies
+1️⃣ Dual Stack
+
+        Device/Router dono protocols samajhta hai → IPv4 bhi aur IPv6 bhi ek sath.
+        
+        Matlab ek hi system me do alag address hote hain.
+        
+        Agar saamne wala IPv4 pe hai to IPv4 se baat hogi, agar IPv6 pe hai to IPv6 se baat hogi.
+
+👉 Example (Hindi):
+        Soch tu ek banda hai jo Hindi aur English dono bol leta hai.
+        
+        Agar saamne wala Hindi bolta hai → tu Hindi me reply deta hai.
+        
+        Agar English bolta hai → tu English me reply deta hai.
+
+⚡ Ye sabse zyada flexible aur recommended approach hai.
+
+2️⃣ Tunneling
+
+        Agar network IPv4 ka hai, par tu IPv6 ka data bhejna chahta hai, to us IPv6 packet ko IPv4 ke andar pack (encapsulate) karke bhej dete hain.
+        
+        Matlab ek tarah ka cover chadha dena.
+
+👉 Example:
+        Soch tu ek gift (IPv6 packet) bhej raha hai par courier company sirf brown box (IPv4) accept karti hai.
+        
+        Tu gift ko brown box me pack karke bhejta hai.
+        
+        Dusre side pe brown box khola jaata hai aur asli gift (IPv6 packet) nikalta hai.
+
+⚡ Isse IPv6 traffic easily IPv4 network ke through travel kar leta hai.
+
+3️⃣ Translation (NAT64 / DNS64)
+
+        Jab ek device sirf IPv6 pe hai aur dusra sirf IPv4 pe hai → to unke beech ek translator lagta hai.
+        
+        Ye IPv6 ko IPv4 me convert karta hai aur vice versa.
+
+👉 Example:
+        Soch ek banda sirf Hindi jaanta hai aur dusra sirf English.
+        
+        Beech me ek translator (NAT64) hai jo Hindi ↔ English translate karta hai.
+        
+        Dono easily communicate kar lete hain.
+
+⚡ Ye un situations me useful hai jaha dual stack possible nahi hota.
+
+📝 Summary (Easy Yaad Rakhne ka Tarika)
+
+        Dual Stack → Dono languages bolne wala banda (IPv4 + IPv6).
+        
+        Tunneling → Gift ko dusre box me pack karke bhejna.
+
+Translation → Beech me translator jo convert karta hai.

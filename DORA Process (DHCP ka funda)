@@ -1,0 +1,76 @@
+🌐 DORA Process (DHCP ka funda)
+
+⚡ Full form → Discover – Offer – Request – Acknowledge
+👉 Ye ek 4 step process hai jo hota hai jab koi device (PC, mobile, laptop, router) network pe aata hai aur IP address khud se maangta hai DHCP server se.
+
+🔹 Step 1: Discover (D)
+
+        Jab ek new device network pe connect hota hai (jaise Wi-Fi join karta hai), uske paas abhi koi IP address nahi hota.
+        
+        Wo ek broadcast message bhejta hai → "Koi DHCP server hai kya? Mujhe ek IP chahiye!"
+
+👉 Real Life Example (Hindi):
+        Soch tu ek hotel me aaya hai bina room book kiye. Tu reception pe jaake bolta hai:
+        "Hello! Koi room khaali hai kya? Mujhe ek room chahiye."
+
+🔹 Step 2: Offer (O)
+
+        Jo DHCP Server hota hai wo sunta hai aur reply karta hai → "Haan mere paas IP address hai. Tu 192.168.1.10 use kar sakta hai. Saath me subnet mask, gateway, DNS bhi de raha hu."
+        
+        Ye ek offer hoti hai, matlab ek suggestion.
+
+👉 Hotel Example:
+        Receptionist bolta hai:
+        "Yes, ek room khaali hai. Tu Room No. 101 le sakta hai."
+
+🔹 Step 3: Request (R)
+
+        Ab client (device) confirm karta hai aur bolta hai → "Ok mujhe ye 192.168.1.10 wali IP chahiye. Please ye reserve kar do sirf mere liye."
+        
+        Ye ek request hoti hai.
+
+👉 Hotel Example:
+        Tu receptionist ko bolta hai:
+        "Ok mujhe Room No. 101 pasand hai. Main wahi lunga. Dusre guest ko mat dena."
+
+🔹 Step 4: Acknowledge (A)
+
+        Ab DHCP Server officially confirm karta hai aur bolta hai → "Theek hai, ab se 192.168.1.10 teri IP hai. Ab isse use kar."
+        
+        Iske saath hi client ko Subnet Mask, Default Gateway, DNS Server ka data bhi milta hai.
+
+👉 Hotel Example:
+        Receptionist bolta hai:
+        "Theek hai sir. Room No. 101 ab officially aapka hai. Ye keys le lijiye."
+
+✅ Final Result
+
+      Device ke paas proper IP configuration aa jata hai:
+      
+      IP Address
+      
+      Subnet Mask
+      
+      Default Gateway
+      
+      DNS Server
+
+Ab wo network pe dusre devices aur Internet ke sath baat kar sakta hai.
+
+🔑 Shortcut Formula (yaad rakhne ka easy way)
+
+        D → Discover = "Koi hai mujhe IP dene wala?"
+        
+        O → Offer = "Haan, ye IP le sakta hai."
+        
+        R → Request = "Mujhe ye IP chahiye."
+        
+        A → Acknowledge = "Ok, ye IP ab teri hai."
+
+👉 Matlab DORA = ek hotel me room allotment jaisa hai.
+
+      IP = Room Number
+      
+      DHCP Server = Receptionist
+      
+      Client = Guest (Tu)

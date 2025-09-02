@@ -1,0 +1,59 @@
+🔹 Router Booting Process (Step by Step)
+
+Jab router on hota hai (power lagate hi), uska process kuch aise hota hai:
+
+1️⃣ POST (Power-On Self Test)
+
+        English: Router checks its hardware (RAM, CPU, interfaces).
+        
+        Hindi: Jaise computer start hote hi apna hardware check karta hai, router bhi apne parts ko test karta hai.
+        👉 Agar hardware kharab ho → error message aayega.
+
+2️⃣ Bootstrap Program Load
+
+        English: Bootstrap is a small code stored in ROM. It decides what to do next (like a guide).
+        
+        Hindi: Bootstrap ek chhota software hai jo router ko batata hai ki Operating System (IOS) kaha se load karna hai.
+
+3️⃣ Load IOS (Internetwork Operating System)
+
+        English: Router now loads the IOS (its brain) from Flash memory (or TFTP server if needed).
+        
+        Hindi: Ab router apna IOS software load karta hai jo usko chalata hai. Ye mostly Flash memory me hota hai.
+
+4️⃣ Find Configuration File
+
+        English: Router looks for a configuration file (startup-config) in NVRAM.
+        
+        Hindi: Router check karta hai ki koi settings/configuration file hai kya NVRAM me (jaise IP addresses, routing info).
+
+5️⃣ Run Configuration
+
+        English: If config file is found → router applies settings.
+        
+        Hindi: Agar file mil gayi → router wahi purani settings load karega (IP, routes, passwords).
+👉 Agar config file nahi mili → router setup mode me chala jayega (basic configuration karne ko bolega).
+
+🔹 Summary in One Line
+
+        POST → Hardware check 🛠️
+        
+        Bootstrap → Decide IOS kaha se lana hai 📍
+        
+        Load IOS → Operating System chalu karna 🧠
+        
+        Load Config → NVRAM se purani settings lana ⚙️
+
+        Router Ready 🚦
+
+⚡ Example: Ye bilkul waise hi hai jaise tumhara computer boot hota hai →
+
+        Hardware check karta hai (POST),
+        
+        BIOS (Bootstrap) load hota hai,
+        
+        OS (Windows/Linux = IOS) start hota hai,
+        
+        Settings apply hoti hain,
+        
+        Fir use karne ke liye ready ho jaata hai.

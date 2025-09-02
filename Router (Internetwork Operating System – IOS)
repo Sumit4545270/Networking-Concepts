@@ -1,0 +1,76 @@
+🔹 Router (Internetwork Operating System – IOS)
+1. What is a Router?
+
+        English: A router is a network device that connects different networks together and decides the best path for data to travel.
+        
+        Hindi: Router ek aisa device hai jo alag-alag networks ko jodta hai aur data packet ko bhejne ke liye best rasta choose karta hai.
+
+👉 Switch = ek hi network ke andar devices connect karta hai.
+👉 Router = alag networks ko connect karta hai.
+
+2. Why Router is Important?
+
+        Without routers, your LAN (ghar/office network) can’t talk to another LAN (like your friend’s home or Google’s servers).
+        
+        Jaise tumhare ghar ka WiFi Router tumhara local network (phone/laptop) ko Internet (world network) se jodta hai.
+
+3. What is Router IOS?
+
+        IOS = Internetwork Operating System
+        
+        Ye ek software hai jo router ke andar chalta hai.
+        
+        Isi ke through hum configure karte hain router ko (via CLI commands).
+        
+        Example: ip route, show running-config etc.
+
+👉 Hindi: Router ek box hai, aur IOS uska dimaag (brain) hai.
+Without IOS, router ek khaali dabba hai.
+
+4. Functions of a Router
+
+        Packet Forwarding → data ko best path se bhejna.
+        
+        Path Selection → routing protocols use karke best route decide karna.
+        
+        Internetworking → alag networks (LAN–WAN–Internet) ko connect karna.
+        
+        Security → ACLs, firewall rules apply karna.
+        
+        Addressing → IP addresses ko samajhna aur unke basis pe decision lena.
+
+5. Router Interfaces
+
+        LAN Interface (Ethernet/FastEthernet/Gigabit) → local network connect karne ke liye.
+        
+        WAN Interface (Serial, Fiber, DSL) → Internet ya dusre remote network ke liye.
+
+6. Example (Relatable)
+
+        📩 Tum ek WhatsApp message bhejte ho →
+        
+        Mobile → WiFi Router (LAN)
+        
+        WiFi Router → ISP Router (WAN)
+        
+        ISP Router → Internet Backbone → Destination ISP Router
+        
+        Destination Router → Friend’s WiFi Router → Friend’s mobile
+
+👉 Har router apna routing table check karta hai aur packet ko aage bhejta hai.
+
+7. How Router Decides the Path?
+
+        Routers use Routing Tables.
+        
+        Static Routing → manually set path.
+        
+        Dynamic Routing → automatic via protocols (RIP, OSPF, EIGRP, BGP).
+
+8. One-Line Summary
+
+        Router = Network ka Traffic Police 🚦
+        
+        Har packet ko check karta hai → “Kaha jaana hai?” aur phir best road choose karke bhej deta hai.
+        
+        IOS = Router ka Operating System (uska dimaag 🧠) jisse hum usko configure karte hain.

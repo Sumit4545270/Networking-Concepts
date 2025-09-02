@@ -1,0 +1,51 @@
+🚦 Router Booting Process (Step by Step in Simple Words)
+1️⃣ POST (Power-On Self Test)
+
+        English → When router turns ON, it checks its hardware (RAM, CPU, interfaces).
+        
+        Hindi → Jaise tu computer on karta hai aur wo apna RAM/Keyboard test karta hai, waise hi router bhi apna hardware check karta hai.
+
+2️⃣ Bootstrap Program
+
+        English → A small program in ROM that decides from where to load the Operating System (IOS).
+        
+        Hindi → Ye bootstrap ek chhota software hai jo decide karta hai IOS kaha se uthana hai (Flash ya TFTP server).
+👉 Same as computer ka BIOS jo bolta hai Windows hard disk se load hoga ya pendrive se.
+
+3️⃣ Load IOS (Internetwork Operating System)
+
+        English → Router loads its brain (IOS = Internetwork Operating System) from Flash memory.
+        
+        Hindi → Router apna dimaag (IOS software) load karta hai Flash se. Agar nahi mila, to dusre jagah (TFTP server) se try karega.
+
+4️⃣ Find Configuration File
+
+        English → Router looks in NVRAM for a file called startup-config. This file has all saved settings.
+        
+        Hindi → Ab router apni settings dhundta hai NVRAM me (IP addresses, passwords, routing info).
+
+5️⃣ Apply Configuration / Setup Mode
+
+English →
+
+        If config found → Router applies settings and becomes ready.
+        
+        If config not found → Router enters setup mode (asks you to configure manually).
+
+Hindi →
+
+        Agar settings mili → Router turant chal padta hai.
+        
+        Agar settings nahi mili → Router bolega "Bhai config bata de" (Setup mode).
+
+⚡ Shortcut Analogy (Computer se relate karke)
+
+        POST = Computer ka power on check
+        
+        Bootstrap = BIOS
+        
+        IOS load = Windows load
+        
+        Config file = Settings / Drivers load hona
+        
+        Setup mode = Agar OS fresh install ho to nayi settings dalni padti hai

@@ -1,0 +1,64 @@
+🔑 1. Administrative Distance (AD)
+
+👉 Definition: Router ke paas agar ek same destination ke liye multiple routes aa gaye (via different routing protocols), to priority kaise decide karega?
+Ye kaam karta hai AD (Administrative Distance).
+
+        AD = Trust level of a route (0–255)
+        
+        Lower AD = More trusted
+
+📌 Example:
+Maan le tujhe Delhi jaana hai.
+
+        Papa bolte hai "Ye rasta best hai" (Static Route)
+        
+        Dost bolta hai "Google Maps ka rasta le" (OSPF)
+        
+        Padosi bolta hai "RIP ka rasta le"
+
+Ab tu kiske upar jyada trust karega?
+
+        Papa ki baat (AD 1) → sabse trusted.
+        
+        Dost ki baat (AD 110) → theek hai.
+        
+        Padosi ki baat (AD 120) → least trusted.
+
+✅ Default AD Values:
+
+        | Routing Source     | AD Value | Trust Level     |
+        | ------------------ | -------- | --------------- |
+        | Directly Connected | 0        | Most trusted    |
+        | Static Route       | 1        | Very high trust |
+        | EIGRP (Internal)   | 90       | Trusted         |
+        | OSPF               | 110      | Medium trust    |
+        | RIP                | 120      | Less trusted    |
+        | External EIGRP     | 170      | Lower trust     |
+        | Unknown / Invalid  | 255      | Never trusted   |
+
+🔑 2. Hop Count
+
+👉 Definition: Hop = Ek router se dusre router tak ek jump.
+Hop count = destination tak pahunchne ke liye kitne routers cross karne padhe.
+
+        RIP routing protocol uses Hop Count as its metric.
+        
+        Lower hop count = Better path.
+
+📌 Example:
+        Tu Mumbai se Pune ja raha hai.
+        
+        Route 1: 2 signals (2 hops) → short.
+        
+        Route 2: 5 signals (5 hops) → long.
+        Router hamesha 2 hop wala path choose karega.
+
+⚡ Limitation:
+
+        RIP me max hop count = 15 hops (16 = unreachable).
+
+🎯 Quick Summary (Shortcut)
+
+Administrative Distance (AD): Which route to trust if multiple available. (Lower is better)
+
+Hop Count: How many routers to cross before reaching destination. (Fewer is better)

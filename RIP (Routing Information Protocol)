@@ -1,0 +1,63 @@
+🔹 RIP (Routing Information Protocol)
+1️⃣ What is RIP?
+        RIP = Distance Vector Routing Protocol
+        Routers apne neighbors ko route information dete hain: “Mere through jaoge to is network tak itne hops lagenge.”
+        Metric = Hop Count (number of routers between source and destination).
+        Max hops = 15 (agar 16 ho gaya → unreachable).
+👉 Matlab RIP chhote networks ke liye hi bana hai.
+
+2️⃣ How RIP Works (Step by Step)
+        Router startup → Apne directly connected networks ko route table me dalta hai.
+        Updates bhejna → Har 30 seconds, apne pura route table broadcast/multicast karta hai neighbors ko.
+        Neighbors receive → Jo nayi info milti hai usko apne table me add/modify kar lete hain.
+        Hop count badhta hai → Har ek router cross karte hi hop count +1 hota hai.
+        Best path choose → Agar ek destination ke multiple path mile, to router lowest hop count wala choose karega.
+3️⃣ RIP Versions
+RIP v1
+
+          Classful (doesn’t send subnet mask info).
+          Broadcast updates (255.255.255.255).
+          No support for VLSM or CIDR.
+RIP v2
+
+        Classless (sends subnet mask info).
+        Multicast updates (224.0.0.9).
+        Supports VLSM & authentication.
+RIPng (Next Generation)
+
+        For IPv6 networks.
+        Uses multicast address FF02::9.
+4️⃣ Loop Prevention in RIP
+Distance Vector protocols me loops ka problem hota hai, isiliye RIP kuch techniques use karta hai:
+
+        Split Horizon → Router apne neighbor ko wahi route wapas advertise nahi karega jahan se usne seekha hai.
+        Route Poisoning → Agar route down ho gaya, router usko metric 16 (unreachable) advertise karta hai.
+        Hold-down Timers → Router wait karega kuch seconds tak taaki jaldi galat route accept na kare.
+5️⃣ RIP Timers
+        Update Timer = 30 sec (table bhejta hai).
+        Invalid Timer = 180 sec (agar neighbor se update nahi aya to route invalid mark karta hai).
+        Hold-down Timer = 180 sec (galat update rokne ke liye).
+        Flush Timer = 240 sec (route completely delete kar deta hai).
+6️⃣ Configuration Example (Cisco)
+        Router(config)# router rip
+        Router(config-router)# version 2
+        Router(config-router)# network 192.168.1.0
+        Router(config-router)# network 10.0.0.0
+        Router(config-router)# no auto-summary
+👉 no auto-summary → taaki classless subnetting ka support mile (CIDR/VLSM).
+
+7️⃣ Advantages of RIP
+        Simple and easy to configure.
+        Works fine for small networks.
+        Good for learning basics of routing.
+8️⃣ Disadvantages of RIP
+        Hop count limitation (max 15).
+        Slow convergence (time lag in updating tables).
+        Not scalable for large enterprise networks.
+        High bandwidth consumption (sends full routing table every 30 sec).
+🧠 One-line Memory Hooks (Shortcuts)
+RIP = Oldest dynamic routing protocol (Distance Vector).
+Metric = Hop count (max 15).
+Updates every 30 sec.
+v1 = Classful, v2 = Classless, RIPng = IPv6.
+Loop control = Split horizon, Poison reverse, Hold-down timers.

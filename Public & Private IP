@@ -1,0 +1,43 @@
+🌍 Public vs 🔒 Private IP
+1. Public IP (Global IP)
+        📡 Visible to everyone on Internet
+        Like your home address in real world. Anyone can send you a letter.
+        Unique worldwide (no two houses can have same postal address).
+        Given by ISP.
+👉 Example: 49.37.128.56 (real public IP you get from Airtel/Jio/BSNL).
+
+2. Private IP (Local IP)
+        🏠 Only works inside your home/office network (LAN)
+        Like your flat number inside a building — unique in building, but many cities may have flat no. 101.
+        Not routable on Internet.
+        Used for internal communication (PC ↔ printer, mobile ↔ Wi-Fi).
+👉 Example:
+
+        Class A Private: 10.0.0.0 – 10.255.255.255
+        Class B Private: 172.16.0.0 – 172.31.255.255
+        Class C Private: 192.168.0.0 – 192.168.255.255
+ (Common: 192.168.1.1 = Wi-Fi router default).
+3. How They Work Together
+        Your laptop may have a Private IP (192.168.1.5).
+        Your router has a Public IP (103.45.67.89).
+        When you open Google → router changes your private IP to public (via NAT = Network Address Translation) → sends request.
+        Reply comes to router → router sends it back to your private IP.
+👉 Think of it like:
+
+        Flat no. (Private IP) + Building main address (Public IP)
+        Courier company only knows the building address, but watchman (router) delivers parcel inside your flat.
+4. 🔑 Quick Comparison Table(Shortcut)
+        | Feature          | Public IP 🌍       | Private IP 🔒            |
+        | ---------------- | ------------------ | ------------------------ |
+        | Who gives?       | ISP                | Your Router/Admin        |
+        | Scope            | Internet-wide      | Local network            |
+        | Unique?          | Globally unique    | Can repeat in diff. LANs |
+        | Example          | 103.56.23.11       | 192.168.1.2              |
+        | Cost             | Paid (ISP charges) | Free                     |
+        | Direct Internet? | Yes                | No (needs NAT)           |
+
+
+   Feature Public IP 🌍 Private IP 🔒     Who gives? ISP Your Router/Admin   Scope Internet-wide Local network   Unique? Globally unique Can repeat in diff. LANs   Example 103.56.23.11 192.168.1.2   Cost Paid (ISP charges) Free   Direct Internet? Yes No (needs NAT)   📝 One-Line Summary
+        Public IP = Home address (visible to all).
+        Private IP = Room number inside your home (only internal).
+        NAT = Watchman who connects both worlds.

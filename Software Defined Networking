@@ -1,0 +1,149 @@
+1️⃣ What is SDN?
+
+Normal networks me:
+
+        Router/switch = dono kaam karte hain → decision making (control plane) + packet forwarding (data plane).
+        
+        Isse network complex ho jata hai (har device separately configure karna padta hai).
+
+👉 SDN separates control plane & data plane:
+
+        Data Plane (hardware devices) → Packets forward karte hain.
+        
+        Control Plane (SDN controller) → Pure network ka brain banta hai.
+        
+        Applications → Policies/automation define karte hain.
+
+2️⃣ OpenDaylight (ODL) kya hai?
+
+        Ye ek open-source SDN controller hai (Linux Foundation project).
+        
+        Ek central brain jisme tum apna pura network manage, program, aur automate kar sakte ho.
+        
+        Ye southbound APIs (like OpenFlow) se switches/routers ko control karta hai.
+        
+        Aur northbound APIs (like REST APIs) se applications ko connect karta hai.
+
+👉 Example:
+        Jaise ek Railway control room ho — control room (ODL) decide karta hai kaunsi train kis track pe chalegi (routing), aur trains (switches) sirf follow karti hain.
+
+3️⃣ OpenDaylight Architecture Components
+
+Think in 3 layers:
+
+🟢 A) Application Layer (Top)
+
+        Yaha par network apps hote hain (traffic engineering, QoS, firewall policies, VPN, load balancing).
+        
+        Ye apps ODL ke northbound API (RESTCONF/REST APIs) use karke network ko instruct karte hain.
+
+👉 Example: App bolta hai: “Block YouTube in office hours” → ODL controller me policy set ho jati hai.
+
+🔵 B) Controller Layer (Middle - Brain of SDN)
+
+Ye ODL core hai jo pura network ka central intelligence banata hai.
+        
+Major components:
+        
+        MD-SAL (Model Driven Service Abstraction Layer) → Ek bus jaisa jo apps aur southbound protocols ke beech baat karne deta hai.
+        
+        Network Topology Manager → Pura network ka map maintain karta hai.
+        
+        Routing/Path Calculation Engine → Best route decide karta hai.
+        
+        Security Modules → ACL, firewall integration.
+        
+        Clustering → High availability (multiple ODL controllers ka cluster).
+
+👉 Example: Jaise ek Google Maps jo pura sheher ka map rakhta hai aur shortest route calculate karta hai.
+
+🔴 C) Data Plane (Bottom - Actual Devices)
+
+        Ye switches/routers hote hain jo sirf packet forward karte hain.
+        
+        ODL inko control karta hai using southbound protocols like:
+        
+                OpenFlow (most famous)
+                
+                NETCONF
+                
+                BGP-LS
+                
+                PCEP
+        
+        Devices apna status ODL ko report karte hain (like: bandwidth, traffic load, link up/down).
+
+👉 Example: Ye roads hain jinke upar cars (packets) chalti hain.
+
+4️⃣ Workflow Example (Relatable)
+
+⚡ Suppose ek company ke paas ODL SDN setup hai aur wo chahte hain “All VoIP calls ko fastest link se bhejna”:
+
+        Application Layer: VoIP-QoS App policy create karta hai.
+        
+        ODL Controller (Brain):
+        
+                Network topology map check karta hai.
+                
+                Fastest path calculate karta hai.
+        
+        Southbound Protocol: OpenFlow rules push karta hai switches ko.
+        
+        Switches (Data Plane): VoIP packets ko specified path se forward karte hain.
+
+👉 Result: Traffic automatically steer ho gaya — bina manually har switch configure kare. 🚀
+
+5️⃣ OpenDaylight ke Major Components (in short)
+
+        MD-SAL → Heart (connects apps & devices).
+        
+        OpenFlow Plugin → Device control (southbound).
+        
+        DLUX → Web GUI for visualization.
+        
+        Neutron (OpenStack Integration) → Cloud networking.
+        
+        AAA Service → Authentication, Authorization, Accounting.
+        
+        Topology Manager → Network map.
+        
+        REST APIs → App to controller communication.
+
+6️⃣ Practical Side (Lab Setup)
+
+        Tum GNS3/Mininet me try kar sakte ho:
+        
+        Install OpenDaylight on a VM (Ubuntu).
+        
+        Run Mininet (virtual SDN switches + hosts).
+        
+        Connect Mininet switches to ODL via OpenFlow.
+        
+        Use ODL DLUX web UI or REST API to:
+        
+                See live topology
+                
+                Add flow rules
+                
+                Block/redirect traffic
+                
+                Create shortest path routes
+
+👉 Example command in Mininet:
+
+        sudo mn --controller=remote,ip=127.0.0.1 --switch=ovsk --topo=tree,depth=2
+
+
+This creates a small network and connects to ODL controller running on localhost.
+
+7️⃣ Summary in 5 lines
+
+        SDN = Separation of control (brain) & data (forwarding).
+        
+        ODL = Open-source SDN controller (Linux Foundation).
+        
+        Northbound API → Apps talk to ODL.
+        
+        Southbound API (OpenFlow, NETCONF, etc.) → ODL controls switches.
+        
+        Result → Centralized, programmable, automated networking.

@@ -1,0 +1,68 @@
+Perfect bhai 🚀
+Ab chalo EIGRP (Enhanced Interior Gateway Routing Protocol) ko detail + simple tareeke se samjh lete hain. Ye RIP se zyada advanced hai aur OSPF se simple hai.
+
+🔹 EIGRP (Enhanced Interior Gateway Routing Protocol)
+1️⃣ What is EIGRP?
+        Developed by Cisco (pehle proprietary tha, ab open standard hai).
+        Ye Advanced Distance Vector Protocol hai (kabhi ise Hybrid Protocol bhi bolte hain kyunki isme Distance Vector + Link State dono ke features hain).
+        Metric = Bandwidth + Delay (not just hop count like RIP).
+👉 Matlab ye zyada accurate path choose karta hai compared to RIP.
+
+2️⃣ How EIGRP Works (Step by Step)
+        Router startup → Apne connected networks ko identify karta hai.
+        Hello packets → Neighbors dhoondhne ke liye Hello packets bhejta hai (multicast 224.0.0.10).
+        Neighbor table banata hai → Jis router ka reply aata hai usko neighbor maan leta hai.
+        Topology table → Sabhi possible routes (successors + feasible successors) yahan save hote hain.
+        Routing table → Best path (lowest composite metric) routing table me daal diya jata hai.
+        DUAL (Diffusing Update Algorithm) → Best + Backup path calculate karta hai bina loops ke.
+👉 RIP me loop problem hota tha, par EIGRP me nahi hota kyunki DUAL algorithm use karta hai.
+
+3️⃣ EIGRP Tables
+        Neighbor Table → Jis router se directly connected aur hello packets exchange kar rahe ho.
+        Topology Table → Sabhi learned routes, including backup.
+        Routing Table → Best routes (jo actually use honge).
+4️⃣ EIGRP Metric Formula
+        EIGRP ka metric bandwidth aur delay pe based hota hai.
+Formula (simplified):
+
+        Metric=(10^7/MinBandwidth+SumDelay)∗256 
+
+👉 Matlab zyada bandwidth aur kam delay wala route hamesha prefer karega.
+
+5️⃣ EIGRP Features
+        ✅ Fast convergence (DUAL algorithm).
+        ✅ Supports VLSM & CIDR.
+        ✅ Load balancing (equal aur unequal cost dono).
+        ✅ Sends only incremental updates (not full table like RIP).
+        ✅ Supports multiple protocols (IPv4, IPv6, IPX, AppleTalk).
+
+6️⃣ EIGRP Packet Types
+        Hello – Neighbor discovery.
+        Update – Route info bhejna.
+        Query – Route info demand karna.
+        Reply – Query ka jawab.
+        ACK – Acknowledge packets.
+7️⃣ Configuration Example (Cisco)
+        Router(config)# router eigrp 100
+        Router(config-router)# network 192.168.1.0 0.0.0.255
+        Router(config-router)# network 10.0.0.0
+        Router(config-router)# no auto-summary
+👉 100 = Autonomous System (AS number).
+👉 network = bata rahe ho kaunsa network EIGRP advertise karega.
+
+8️⃣ Advantages
+        Better scalability than RIP.
+        Loop-free (DUAL).
+        Supports multiple network protocols.
+        Bandwidth efficient (incremental updates).
+9️⃣ Disadvantages
+        Cisco proprietary (pehle, ab thoda open hai).
+        Uses more CPU & RAM than RIP.
+        Not as universally supported as OSPF.
+🧠 One-line Memory Hooks
+        EIGRP = Advanced Distance Vector (Hybrid).
+        Metric = Bandwidth + Delay.
+        Hello packets on 224.0.0.10.
+        Tables = Neighbor, Topology, Routing.
+        DUAL algorithm = loop-free + fast convergence.
+        Supports unequal cost load balancing.

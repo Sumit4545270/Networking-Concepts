@@ -1,0 +1,74 @@
+Bhai ab aate hain OSPF (Open Shortest Path First) pe – isko detail + simple tareeke se samjh le, RIP aur EIGRP ke baad tu easily relate kar lega 🚀
+
+🔹 OSPF (Open Shortest Path First)
+1️⃣ What is OSPF?
+        Link-State Routing Protocol (RIP aur EIGRP jaise Distance Vector nahi).
+        Open Standard hai (sab vendors use kar sakte hain, sirf Cisco tak limited nahi).
+        Metric = Cost (based on Bandwidth) → higher bandwidth = lower cost (better path).
+        Works on Dijkstra’s Shortest Path First (SPF) Algorithm.
+👉 Matlab: Poore network ka map banata hai aur usme se sabse short path nikalta hai.
+
+2️⃣ How OSPF Works (Step by Step)
+        Hello Packets → Routers neighbors ko discover karte hain (multicast 224.0.0.5).
+        Adjacency Formation → Neighbor routers ke sath relationship banata hai.
+        LSA (Link State Advertisements) → Har router apne connected networks ki info broadcast karta hai.
+        LSDB (Link State Database) → Sab routers ke paas ek hi complete network map hota hai.
+        SPF Algorithm → Har router apne aap best path calculate karta hai.
+        Routing Table → Best path ko apne routing table me daal deta hai.
+👉 Is wajah se OSPF fast converge karta hai aur loop-free hota hai.
+
+3️⃣ OSPF Areas
+        Backbone Area (Area 0) → Sabhi dusre areas isse connect hone chahiye.
+        Normal Areas → Simple internal areas.
+        Stub Areas → Outside routes allowed nahi, sirf default route.
+        NSSA (Not-So-Stubby Area) → Limited external routes allowed.
+👉 Areas ka use scalability ke liye hota hai (network bahut bada ho jaye to break into parts).
+
+4️⃣ OSPF Metric (Cost)
+Formula:
+        Cost = (ReferenceBandwidthCost / InterfaceBandwidth)
+​
+ 
+Default Reference Bandwidth = 100 Mbps.
+
+Example:
+
+        FastEthernet (100 Mbps) → Cost = 1
+        10 Mbps link → Cost = 10
+        1 Gbps link → Cost = 0.1 (rounded to 1 if default ref not changed)
+👉 Matlab hamesha fastest link ko prefer karega.
+
+5️⃣ OSPF Packet Types
+        Hello – Neighbor discovery.
+        DBD (Database Description) – LSDB summary exchange.
+        LSR (Link State Request) – Router asks for details.
+        LSU (Link State Update) – Router shares details.
+        LSAck – Acknowledgement of updates.
+6️⃣ OSPF Tables
+        Neighbor Table → Directly connected routers.
+        Topology Table (LSDB) → Full network map.
+        Routing Table → Best paths from LSDB.
+7️⃣ OSPF Router Types
+        Internal Router → Belongs to one area.
+        Backbone Router → Inside Area 0.
+        Area Border Router (ABR) → Connects multiple areas.
+        Autonomous System Boundary Router (ASBR) → Connects OSPF to other protocols (like BGP, RIP).
+8️⃣ OSPF Advantages
+        ✅ Fast convergence.
+        ✅ Loop-free (SPF algorithm).
+        ✅ VLSM & CIDR support.
+        ✅ Scalable with areas.
+        ✅ Open Standard (not vendor locked).
+
+9️⃣ OSPF Disadvantages
+        ❌ More CPU and memory usage than RIP/EIGRP.
+        ❌ Complex to configure for beginners.
+        ❌ Small networks me overkill hai (zyada heavy).
+
+🧠 One-line Memory Hooks
+        OSPF = Link-State Protocol.
+        Algorithm = Dijkstra SPF.
+        Metric = Cost (bandwidth-based).
+        Areas = Backbone (0), Stub, NSSA.
+        Tables = Neighbor, LSDB, Routing.
+        Hello → LSA → SPF → Routing Table.
